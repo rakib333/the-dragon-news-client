@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const LoginLayout = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: '#F3F3F3', paddingBottom: '110px' }}>
             <NavigationBar></NavigationBar>
             <Container className="mt-5">
                 <Outlet></Outlet>

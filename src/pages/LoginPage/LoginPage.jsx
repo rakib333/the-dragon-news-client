@@ -1,9 +1,9 @@
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import './login.css';
 const LoginPage = () => {
     return (
-        <Container className='w-25 mx-auto'>
+        <Container className='custom-width  mx-auto'>
             <h2>Please Login</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

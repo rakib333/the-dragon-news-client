@@ -27,7 +27,9 @@ const NavigationBar = () => {
                                 <Nav.Link eventKey={2}>
                                     {user ?
                                         <Button variant="success">Log Out</Button> :
-                                        <Button variant="info">Login</Button>
+                                        <Button variant="info">
+                                            <Link className='text-decoration-none text-light' to='/login'>Login</Link>
+                                        </Button>
                                     }
                                 </Nav.Link>
                             </Nav>

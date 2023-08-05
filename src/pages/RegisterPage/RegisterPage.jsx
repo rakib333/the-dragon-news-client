@@ -6,7 +6,7 @@ const RegisterPage = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     return (
-        <Container className='w-25 mx-auto'>
+        <Container className='custom-width mx-auto'>
             <h2>Please Register</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

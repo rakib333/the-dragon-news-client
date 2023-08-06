@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProviders';
 
 const NavigationBar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        console.log('clicked')
+        logOut()
+    }
     return (
         <div className='bg-light'>
             <Container>
@@ -24,14 +28,13 @@ const NavigationBar = () => {
                                     <Nav.Link as={Link} to='/login'>
                                         <FaUserCircle style={{ fontSize: '30px' }} />
                                     </Nav.Link>}
-                                <Nav.Link eventKey={2}>
-                                    {user ?
-                                        <Button variant="success">Log Out</Button> :
-                                        <Button variant="info">
-                                            <Link className='text-decoration-none text-light' to='/login'>Login</Link>
-                                        </Button>
-                                    }
-                                </Nav.Link>
+                                {user ?
+                                    <Button onClick={handleLogOut} variant="success">Log Out</Button> :
+                                    <Button variant="info">
+                                        <Link className='text-decoration-none text-light' to='/login'>Login</Link>
+                                    </Button>
+                                }
+
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

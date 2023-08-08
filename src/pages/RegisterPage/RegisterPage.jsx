@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { sendEmailVerification } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,6 +12,7 @@ const RegisterPage = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [accepted, setAccepted] = useState(false);
+    const navigate = useNavigate();
 
     const handleCheck = e => {
         const check = e.target.checked;
@@ -50,6 +51,7 @@ const RegisterPage = () => {
                 console.log(createdUser)
                 setSuccess('user created successful')
                 // set name and photo url
+                navigate('/login')
                 updateUser(createdUser, name, photo)
                     .then(() => {
                         console.log('photo updated')
